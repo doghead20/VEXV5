@@ -135,12 +135,29 @@ void auton() {
   }
 
 void autonSkills(){
+  MOTOR_TOW.rotateFor(reverse, 700, degrees);
   MOTOR_CHAIN.setVelocity(100, percent);
   MOTOR_CHAIN.spinFor(forward, 2, seconds);
 
   chassis.drive_distance(8);
   chassis.turn_to_angle(65);
-  chassis.drive_distance(-13);
-  MOTOR_TOW.spinFor(forward, 90, degrees);
-  chassis.drive_distance(-13);
+  chassis.drive_distance(-26);
+  chassis.turn_to_angle(0);
+
+  MOTOR_FLEX.spin(forward);
+  chassis.drive_distance(45);
+  MOTOR_FLEX.stop();
+
+  chassis.turn_to_angle(90);
+  chassis.drive_distance(7);
+  chassis.turn_to_angle(-90);
+
+  chassis.drive_distance(-20);
+  MOTOR_TOW.rotateFor(forward, 700, degrees);
+  chassis.turn_to_angle(-100);
+  chassis.drive_distance(2);
+
+  chassis.turn_to_angle(-75);
+  chassis.drive_distance(40);
+  MOTOR_CHAIN.spinFor(forward, 300, degrees);
 }
